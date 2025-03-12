@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- JavaScript Files -->
+    <script src="menu.js"></script>  
+    <script src="custom.js"></script>
+
+
+    <style>
+    /* Ensure the Mobile Menu Stays on Top */
+    .mobile-menu {
+        display: none;
+        background-color:red;
+        position: fixed; /* Fixes it at the top */
+        top: 65px; /* Position below navbar */
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Ensures it stays above hero section */
+        padding: 0px 0;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-menu.show-menu {
+        display: block;
+        top: 5;
+    }
+</style>
+
+</head>
+<body class="services-page">
+
+    <!-- ✅ Navigation Bar (Properly Closed) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fas fa-car"></i> <!-- Business Icon -->
+            <span class="business-name">Concrete Pro Services</span>
+        </div>
+
+        <!-- New Navigation Links -->
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <a href="tel:+1234567890" class="call-btn">
+                <button>CALL US <i class="fas fa-phone-alt"></i></button>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav> 
+    <!-- ✅ Navbar Closed Properly -->
+
+    <!-- ✅ Hero Section (Placed Outside Navbar) -->
+    <section id="services-hero">
+        <div class="hero-content">
+            <h1>Top-Quality Concrete Services</h1>
+            <p>Durable, Affordable, and Professional Concrete Solutions for Homes & Businesses</p>
+            <a href="./contact.html" class="hero-btn">Get a Free Quote</a>
+        </div>
+    </section>
+    <!-- ✅ Hero Section Properly Closed -->
+
+    <!-- ✅ JavaScript for Menu Toggle (At the Bottom for Best Performance) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('show-menu');
+                });
+            }
+        });
+    </script>
+ <!-- end of javascript -->
+<!-- end of hero section -->
+<!-- start of services -->
+<!-- start of services -->
+<!-- start of services -->
+<section id="concrete-services" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 50px 20px;">
+    <div class="services-container" style="max-width: 800px; width: 100%; margin: 0 auto;">
+        <h2>Our Concrete Services</h2>
+        <p>We provide high-quality, durable, and professional concrete services for both residential and commercial projects. Explore our wide range of services below.</p>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Concrete Driveways</h3>
+            <p>We install durable and long-lasting concrete driveways that enhance your property's curb appeal. Choose from traditional, stamped, or stained finishes.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Patios & Outdoor Spaces</h3>
+            <p>Transform your backyard with a beautifully designed concrete patio. We offer custom designs, stamped textures, and colored concrete to match your style.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Stamped & Decorative Concrete</h3>
+            <p>Enhance the look of your concrete with decorative stamping, exposed aggregate, or staining. Perfect for patios, walkways, and pool decks.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Concrete Slabs & Foundations</h3>
+            <p>We specialize in high-strength concrete slabs and foundations for homes, garages, and commercial buildings, ensuring structural stability.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Sidewalks & Walkways</h3>
+            <p>We install and repair sidewalks and walkways that are durable, safe, and ADA-compliant, perfect for residential and commercial properties.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Retaining Walls</h3>
+            <p>Our concrete retaining walls offer both function and style, preventing soil erosion while adding a unique touch to your landscape.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Concrete Repair & Resurfacing</h3>
+            <p>We fix cracks, resurface old concrete, and restore damaged surfaces to look brand new, extending the lifespan of your concrete installations.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Parking Lots & Commercial Concrete</h3>
+            <p>We offer large-scale commercial concrete solutions, including parking lots, warehouse floors, and industrial concrete installations.</p>
+        </div>
+        <hr style="width: 60%; margin: 20px auto; border: 2px solid black;">
+
+        <div class="service" style="margin: 20px 0; padding: 20px;">
+            <h3>Concrete Steps & Ramps</h3>
+            <p>Custom-built concrete steps and ADA-compliant ramps for residential and commercial properties, ensuring accessibility and safety.</p>
+        </div>
+    </div>
+</section>
+<!-- end of services -->
+<!-- end of services -->
+
+<!-- end of services -->
+
+</body>
+</html>

@@ -1,0 +1,994 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding-top: 60px; /* Prevent content from overlapping navbar */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: red; /* Maroon */
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Left Section (Business Name & Logo) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-left i {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+/* Center Section (Address) */
+.nav-center {
+    flex: 1;
+    text-align: center;
+}
+
+.location {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location i {
+    margin-right: 5px;
+}
+
+/* Right Section (Call Button & Menu Toggle) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Call Button - Moved Left */
+/* Fix Call Us Button Link */
+.call-btn {
+    text-decoration: none; /* Removes blue underline */
+    display: inline-block; /* Ensures proper button structure */
+}
+
+.call-btn button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none; /* Ensures no underline */
+    outline: none; /* Removes blue outline */
+}
+
+/* Remove underline when clicked or focused */
+.call-btn a,
+.call-btn button:focus,
+.call-btn button:active {
+    text-decoration: none !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Hamburger Menu - Custom Three Lines */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000;
+}
+
+/* Each Line */
+.menu-toggle .bar {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Space between lines */
+.menu-toggle .bar:nth-child(2) {
+    margin: 6px 0;
+}
+
+/* 🔥 Mobile Menu (Full-Width Drop Down) */
+/* 🔥 Mobile Menu - Prevent Overlapping */
+.mobile-menu {
+    display: none;
+    background-color: red;
+    position: fixed; /* Change from absolute to fixed */
+    top: 120px; /* Push the menu down below the navbar */
+    left: 0;
+    width: 100vw; /* Full screen width */
+    height: auto;
+    text-align: center;
+    z-index: 1500;
+    padding: 40px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* When menu is shown, ensure enough space below the navbar */
+.mobile-menu.show-menu {
+    display: block !important;
+    height: auto; /* Adjusts to content */
+    max-height: 80vh; /* Prevents it from covering the whole screen */
+    overflow-y: auto; /* Allows scrolling if needed */
+}
+
+/* Mobile Menu Items */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    padding: 15px 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: block;
+    padding: 15px;
+}
+
+.mobile-menu a:hover {
+    background-color: black;
+}
+
+
+/* Show Mobile Menu when toggled */
+
+/* 🔥 Hero Section with Concrete Pouring Image */
+.hero {
+    width: 100%;
+    height: 90vh; /* Covers most of the screen */
+    background: url('./images/tony.webp') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Full-Size Overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text stays on top of the overlay */
+    max-width: 600px;
+    padding: 40px;
+}
+
+/* Hero Title */
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Hero Subtext */
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Hero Button */
+.hero-btn {
+    background: rgb(233, 2, 2); /* Maroon */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #600000;
+}
+
+/* 🔥 Responsive Design - Fix Call Button & Menu */
+@media (max-width: 768px) {
+    .nav-center {
+        display: none; /* Hide address on mobile */
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .nav-right {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .call-btn {
+        order: -1;
+        margin-right: 50px; /* Ensures it doesn't overlap */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .hero-btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+}
+/* end of hero section */
+/* 🔥 Why Choose Us Section */
+/* 🔥 Why Choose Us Section */
+.why-choose-us {
+    background: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.why-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.why-choose-us h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.why-choose-us p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* Individual Feature Sections */
+.why-feature {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.why-feature i {
+    font-size: 40px;
+    color: rgb(233, 2, 2); /* Maroon */
+    margin-bottom: 15px;
+}
+
+.why-feature h3 {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.why-feature p {
+    font-size: 18px;
+    color: black;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hard Rule Separator */
+hr {
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .why-container {
+        max-width: 90%;
+    }
+
+    .why-feature p {
+        font-size: 16px;
+    }
+
+    .why-choose-us h2 {
+        font-size: 30px;
+    }
+}
+
+/* footer start */
+/* 🔥 Footer Section */
+.footer {
+    background: red;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Hard Rule on Top */
+.footer hr {
+    border: 2px solid black;
+    width: 90%;
+    margin: 0 auto 30px auto;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Footer Columns */
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+}
+
+/* Footer Titles */
+.footer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* 🔥 Horizontal Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+}
+
+.footer-links li {
+    display: inline-block;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Contact Info */
+.footer-right p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.footer-right i {
+    color: rgb(233, 2, 2); /* Maroon */
+    margin-right: 8px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+        margin-bottom: 20px;
+    }
+
+    /* Ensure links remain horizontal on mobile */
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+/* footer end*/
+
+/* services nav bar */
+
+/* 🔥 Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: black; /* Highlight color */
+}
+
+/* 🔥 Responsive Design - Show Navigation Links Properly on Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide links on mobile */
+    }
+
+    .mobile-menu.show-menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        display: block;
+    }
+}
+
+/* 🏠 Home Page Styles */
+.home-page .hero {
+    background: url('./images/tony.webp') no-repeat center center/cover;
+}
+
+.home-page .why-choose-us {
+    background-color: #f8f8f8;
+}
+
+/* 🏗️ Services Page Styles */
+.services-page .hero {
+    background: url('./images/services-hero.jpg') no-repeat center center/cover;
+}
+
+.services-page .why-choose-us {
+    background-color: #ddd;
+}
+
+/* 📞 Contact Page Styles */
+.contact-page .hero {
+    background: url('./images/contact-hero.jpg') no-repeat center center/cover;
+}
+
+.contact-page .contact-form {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* desktop css only */
+/* 🔥 Desktop Fix - Keep Call Button & Toggle on Same Row */
+@media (min-width: 769px) {
+    .nav-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Align everything to the right */
+        gap: 15px; /* Keep spacing even */
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%); /* Centers everything */
+    }
+
+    /* 🔥 Move Call Us Button to the Left */
+    .call-btn {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        order: -1; /* Places the Call Us button first */
+    }
+
+    /* 🔥 Fix Toggle Button Alignment */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 10px; /* Keeps it level with Call Us button */
+        right: 0;
+        margin-left: 10px; /* Space between Call Us and Toggle */
+    }
+
+    /* 🔥 Fix Mobile Menu Position (Remove Gap) */
+    .mobile-menu {
+        position: absolute;
+        top: 100%; /* Positions it directly below navbar */
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 1500;
+        padding-top: 10px; /* Removes extra spacing */
+    }
+}
+
+/* end of desktop css */
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding-top: 60px; /* Prevent content from overlapping navbar */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: red; /* Maroon */
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Left Section (Business Name & Logo) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-left i {
+    font-size: 32px;
+    margin-right: 10px;
+}
+
+/* Center Section (Address) */
+.nav-center {
+    flex: 1;
+    text-align: center;
+}
+
+.location {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location i {
+    margin-right: 5px;
+}
+
+/* Right Section (Call Button & Menu Toggle) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Call Button - Moved Left */
+.call-btn {
+    text-decoration: none; /* Removes blue underline */
+    display: inline-block; /* Ensures proper button structure */
+}
+
+.call-btn button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Remove outline when clicked or focused */
+.call-btn button:focus,
+.call-btn button:active {
+    text-decoration: none !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* 🔥 Fix: Keep Call Us Button & Toggle Button in the Same Row (Desktop Only) */
+@media (min-width: 769px) {
+    .nav-right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 15px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .call-btn {
+        display: flex;
+        align-items: center;
+        order: -1;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 10px; /* Keeps it level */
+        right: 0;
+        margin-left: 10px;
+    }
+}
+
+/* 🔥 Mobile Menu (Full-Width Drop Down) */
+.mobile-menu {
+    display: none;
+    background-color: red;
+    position: absolute;
+    top: 100%; /* Moves it directly under navbar */
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    z-index: 1500;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Show Menu When Toggled */
+.mobile-menu {
+    display: none;
+    background-color: red;
+    position: absolute; /* Keep it below the navbar */
+    top: 100%; /* Directly under the navbar */
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    z-index: 1500;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Mobile Menu Items */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-menu li {
+    padding: 15px 0;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    display: block;
+    padding: 15px;
+}
+
+.mobile-menu a:hover {
+    background-color: #600000;
+}
+
+/* Ensure No Gap Between Menu & Navbar */
+@media (min-width: 769px) {
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 1500;
+        padding-top: 10px;
+    }
+}
+
+/* End of Fix */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* General Section Styling */
+.section {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+/* Hard Rule Separator */
+hr {
+    border: 2px solid black;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* 🔹 Center Navigation Links on Desktop */
+@media (min-width: 769px) {
+    .nav-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-links ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links li {
+        display: inline-block;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: black; /* Highlight color */
+    }
+}
+
+
+/* 🔹 Remove Toggle Button on Desktop (Services Page Only) */
+@media (min-width: 769px) { 
+    .services-page .menu-toggle {
+        display: none !important;
+    }
+}
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    z-index: 10000; /* ⬅️ Higher value ensures navbar is always on top */
+    
+}
+
+
+
+
+body {
+    background-color: #f4f4f4; /* Ensure a consistent background */
+    min-height: 100vh; /* Prevent layout breaking */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* 🔥 Fix Hero Overlapping Navbar */
+.hero-section {
+    width: 100%;
+    height: 90vh; /* Full screen height */
+    background: url('./images/concrete-hero.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+
+    /* 🔥 Push it below the navbar */
+    margin-top: 80px; /* Adjust based on navbar height */
+}
+
+/* 🔥 Fix for Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 75vh; /* Reduce height on smaller screens */
+    }
+}
+
+
+
+/* ✅ Hero Section Styling */
+#services-hero {
+    width: 100%;
+    height: 90vh; /* Covers most of the screen */
+    background: url('./images/new\ concrete.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ Full-Size Black Overlay */
+#services-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust the 0.6 for lighter/darker effect */
+    z-index: 1;
+}
+
+/* ✅ Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text stays on top of the overlay */
+    max-width: 600px;
+    padding: 40px;
+}
+
+/* ✅ Hero Title */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ✅ Hero Subtext */
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* ✅ Hero Button */
+.hero-btn {
+    background: rgb(233, 2, 2); /* Maroon */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+    #services-hero {
+        height: 75vh;}} /* Reduce height on
+
+/* Apply black hover color to all elements */
+a:hover, 
+button:hover, 
+.nav-links a:hover, 
+.quote-btn:hover, 
+.call-btn:hover, 
+.menu-toggle:hover, 
+.mobile-menu a:hover {
+    color: black !important;  /* Changes text color to black */
+}
+
+/* Remove background color change on hover */
+.mobile-menu a:hover {
+    background-color: transparent !important;
+    color: black !important; /* Ensures text stays black */
+}
+
+/* Also apply it to active/focus states just in case */
+.mobile-menu a:focus, 
+.mobile-menu a:active {
+    background-color: transparent !important;
+    color: black !important;
+}
+
+/* Remove hover effect from menu toggle */
+.menu-toggle:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+    border: none !important;
+}
+
+
+.contact {
+    font-family: "Montserrat", sans-serif!important; /* Correct syntax */
+}
+
+
